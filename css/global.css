@@ -1,0 +1,128 @@
+
+body {
+    
+    background-size: 100%;
+    background-attachment: fixed;
+    font-family: 'Titillium Web Light', sans-serif;
+    color: aliceblue;
+}
+
+.stick-nav {
+    background-color: white;   
+}
+
+a:hover{  
+    background-color:rebeccapurple;
+    padding: 20px;
+    color: white;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+hr {
+    border: 1px solid rebeccapurple;
+    width: 20%;
+    position: absolute;
+    right: 60px;
+
+}
+
+
+a { 
+    text-decoration: none;
+    color: rebeccapurple;
+
+
+}
+.nav-elements {
+    display: flex;
+    list-style: none;
+    font-size: 2em;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: 0;
+    color: rebeccapurple;
+    text-align: right;
+    
+    
+}
+
+
+li {
+    padding: 20px;
+}
+
+.right-elem {
+    margin-right: auto;
+    padding-right: 30px;
+    color: white;
+}
+
+
+@media only screen and (max-width: 880px){
+    .nav-elements{
+        font-size: 1.2em;
+        padding: 0;
+    }
+}
+
+.search-block {
+    color: rebeccapurple;
+    text-align: center;
+    font-size: 2em;
+    height: 50%;
+    padding-top: 100px;
+    padding-bottom: 50px;;
+    scrollbar-base-color:  rebeccapurple;
+    background-image: url(../images/bg-left.png);
+    background-position: left;
+    background-repeat: no-repeat, repeat;
+    background-size: 30%; 
+    
+}
+
+#sbox {
+width: 30%;
+height: 15%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid rebeccapurple;
+border-radius: 4px;
+box-sizing: border-box;
+margin-left: 0px,50px;
+
+}
+ #sbox:focus{
+    border: 1px solid green;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: yellowgreen;
+ }
+
+ 
+
+
+  
+  .footer {
+height: 50px;
+background-color: rebeccapurple;
+color: white;
+padding: 16px;
+font-size: 1em;
+margin-top: 15px;
+padding-left: 40px;
+padding-right: 40px;
+border-radius: 1px;
+border: 1px solid black;
+opacity: 0.9;
+
+position: absolute;
+bottom: 0;
+width: 100%;
+height: 20px;
+margin: 0 auto;
+
+  }
