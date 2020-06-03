@@ -4,7 +4,7 @@
     // second - allows POST method,
     // third - which http headers can be used
     header('Access-Control-Allow-Origin: *');
-    header('Access-Control-Allow-Methods: POST');
+    header('Access-Control-Allow-Methods: PUT');
     header('Content-Type: application/json');
     header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Access-Control-Allow-Methods, Access-Control-Allow-Origin, Authorization, X-Requested-With');
 
@@ -48,12 +48,12 @@
     $champion->stats['attackspeedoffset'] = $data->attackspeedoffset;
     $champion->stats['attackspeedperlevel'] = $data->attackspeedperlevel;
 
-    if($champion->create_champion()){
+    if($champion->update_champion()){
         echo json_encode(
-            array('message' =>  'Created new champion!')
+            array('message' =>  'Champion updated!')
         );
     } else {
         echo json_encode(
-            array('message' => 'Failed to create champion!')
+            array('message' => 'Failed to update champion!')
         );
     }
