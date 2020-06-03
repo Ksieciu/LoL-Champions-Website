@@ -1,12 +1,22 @@
-
+/* Page body - global styling */
 body {
     
     background-size: 100%;
     background-attachment: fixed;
     font-family: 'Titillium Web Light', sans-serif;
-    color: aliceblue;
+    color: white;
+}
+h2::selection {
+background-color:rebeccapurple;
+color: white;
+
 }
 
+html {
+    scroll-behavior: smooth;
+    scrollbar-base-color:  rebeccapurple;
+}
+/* Page navigation */
 .stick-nav {
     background-color: white;   
 }
@@ -33,7 +43,7 @@ hr {
 a { 
     text-decoration: none;
     color: rebeccapurple;
-
+    
 
 }
 .nav-elements {
@@ -59,7 +69,11 @@ li {
     padding-right: 30px;
     color: white;
 }
-
+.left-elem {
+    margin-left: auto;
+    padding-left: 30px;
+    color: white;
+}
 
 @media only screen and (max-width: 880px){
     .nav-elements{
@@ -68,7 +82,12 @@ li {
     }
 }
 
-.search-block {
+
+.hidden {
+    display: none;
+}
+/* search box */
+.search-block  {
     color: rebeccapurple;
     text-align: center;
     font-size: 2em;
@@ -80,10 +99,13 @@ li {
     background-position: left;
     background-repeat: no-repeat, repeat;
     background-size: 30%; 
+    margin-right: -40%;
     
 }
 
-#sbox {
+
+
+.input-box {
 width: 30%;
 height: 15%;
 padding: 12px 20px;
@@ -94,35 +116,142 @@ border-radius: 4px;
 box-sizing: border-box;
 margin-left: 0px,50px;
 
+
 }
- #sbox:focus{
+ .input-box:focus{
     border: 1px solid green;
     border-radius: 4px;
     box-sizing: border-box;
     outline: yellowgreen;
  }
+/* search button*/
+#sbutton {
+    background-color: rebeccapurple;
+    color: white;
+    font-size: 0.6em;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+    padding: 0.25em 0.75em;
+    min-width: 10ch;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+   border: white;
+}
+ #sbutton:hover {
+background-color: green;
+color: white; 
+ }
 
- 
 
 
+/* Common wrapper styling*/
+.module-wrapper-invert {
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    height: 50%;
+    padding-top: 50px;
+    padding-bottom: 50px;;
+    scrollbar-base-color:  rebeccapurple;
+    background-color: rebeccapurple;
+    padding-left: 50px;
+    margin-left: -40%;
+    background-image: url(../images/max.jpg);
+    background-position: right;
+    background-repeat: no-repeat, repeat;
+    background-size: 30%; 
   
-  .footer {
-height: 50px;
-background-color: rebeccapurple;
-color: white;
-padding: 16px;
-font-size: 1em;
-margin-top: 15px;
-padding-left: 40px;
-padding-right: 40px;
-border-radius: 1px;
-border: 1px solid black;
-opacity: 0.9;
+  }
 
-position: absolute;
-bottom: 0;
-width: 100%;
-height: 20px;
-margin: 0 auto;
+/*show button*/
+  #show_button{
+    background-color: rebeccapurple;
+    color: white;
+    font-size: 0.6em;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+    padding: 0.25em 0.75em;
+    min-width: 10ch;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: white;
+    
+}
+ #show_button:hover {
+background-color: green;
+color: white; 
+ }
+/*add champion*/
+ .module-wrapper-pure {
+    color: rebeccapurple;
+    text-align: center;
+    font-size: 2em;
+    height: 50%;
+    padding-top: 100px;
+    padding-bottom: 50px;;
+    background-color: white;
+    
 
   }
+
+  #add_champ {
+    background-color:white ;
+    color: rebeccapurple;
+    font-size: 0.6em;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+    padding: 0.25em 0.75em;
+    min-width: 10ch;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: rebeccapurple;
+    
+  }
+  #add_champ:hover {
+    background-color: green;
+    color: white; 
+     }
+
+     /*show monster*/
+
+.module-wrapper-monster {
+        color: white ;
+        text-align: center;
+        font-size: 2em;
+        height: 50%;
+        padding-top: 100px;
+        padding-bottom: 50px;;
+        background-color: rebeccapurple;
+        
+     }
+#monster_button {
+    background-color:white ;
+    color: rebeccapurple;
+    font-size: 0.6em;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+    padding: 0.25em 0.75em;
+    min-width: 10ch;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: rebeccapurple;
+}
+ #monster_button:hover{
+    background-color: green;
+    color: white; 
+     }
+ 
+
+ footer 
+ {
+    color:rebeccapurple;
+
+ }
