@@ -80,6 +80,11 @@ li {
         font-size: 1.2em;
         padding: 0;
     }
+	a:hover{  
+    background-color:rebeccapurple;
+    padding: 0.1em;
+    color: white;
+}
 }
 
 

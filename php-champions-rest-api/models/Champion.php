@@ -228,6 +228,7 @@
             $statistics_query->bindParam(':attackspeedoffset', $this->stats['attackspeedoffset']);
             $statistics_query->bindParam(':attackspeedperlevel', $this->stats['attackspeedperlevel']);
 
+
             if($champion_query->execute()){
                 if(!($statistics_query->execute())){
                     print_r($statistics_query->errorInfo());
@@ -237,111 +238,7 @@
             } else {  
                 return false;
             } 
+
         }
 
-
-        public function update_champion(){
-            $champion_query = $this->conn->prepare('UPDATE ' . $this->champ_table . '
-                SET
-                    name = :name,
-                    title = :title,
-                    icon = :icon,
-                    description = :description
-                WHERE
-                    id = :id');
-            
-
-            // binding parameters
-            $champion_query->bindParam(':id', $this->id);
-            $champion_query->bindParam(':name', $this->name);
-            $champion_query->bindParam(':title', $this->title);
-            $champion_query->bindParam(':icon', $this->icon);
-            $champion_query->bindParam(':description', $this->description);
-
-            // execute query, if failed print error and return false
-            // if(!($champion_query->execute())){
-            //     printf("Error");
-            //     return false;
-            // }
-
-            $statistics_query = $this->conn->prepare('UPDATE ' . $this->stats_table . '
-            SET
-                hp = :hp,
-                hpperlevel = :hpperlevel,
-                mp = :mp,
-                mpperlevel = :mpperlevel,
-                movespeed = :movespeed,
-                armor = :armor,
-                armorperlevel = :armorperlevel,
-                spellblock = :spellblock,
-                spellblockperlevel = :spellblockperlevel,
-                attackrange = :attackrange,
-                hpregen = :hpregen,
-                hpregenperlevel = :hpregenperlevel,
-                mpregen = :mpregen,
-                mpregenperlevel = :mpregenperlevel,
-                crit = :crit,
-                critperlevel = :critperlevel,
-                attackdamage = :attackdamage,
-                attackdamageperlevel = :attackdamageperlevel,
-                attackspeedoffset = :attackspeedoffset,
-                attackspeedperlevel = :attackspeedperlevel
-            WHERE id = :id');
-
-            // binding parameters
-            $statistics_query->bindParam(':id', $this->id);
-            $statistics_query->bindParam(':hp', $this->stats['hp']);
-            $statistics_query->bindParam(':hpperlevel', $this->stats['hpperlevel']);
-            $statistics_query->bindParam(':mp', $this->stats['mp']);
-            $statistics_query->bindParam(':mpperlevel', $this->stats['mpperlevel']);
-            $statistics_query->bindParam(':movespeed', $this->stats['movespeed']);
-            $statistics_query->bindParam(':armor', $this->stats['armor']);
-            $statistics_query->bindParam(':armorperlevel', $this->stats['armorperlevel']);
-            $statistics_query->bindParam(':spellblock', $this->stats['spellblock']);
-            $statistics_query->bindParam(':spellblockperlevel', $this->stats['spellblockperlevel']);
-            $statistics_query->bindParam(':attackrange', $this->stats['attackrange']);
-            $statistics_query->bindParam(':hpregen', $this->stats['hpregen']);
-            $statistics_query->bindParam(':hpregenperlevel', $this->stats['hpregenperlevel']);
-            $statistics_query->bindParam(':mpregen', $this->stats['mpregen']);
-            $statistics_query->bindParam(':mpregenperlevel', $this->stats['mpregenperlevel']);
-            $statistics_query->bindParam(':crit', $this->stats['crit']);
-            $statistics_query->bindParam(':critperlevel', $this->stats['critperlevel']);
-            $statistics_query->bindParam(':attackdamage', $this->stats['attackdamage']);
-            $statistics_query->bindParam(':attackdamageperlevel', $this->stats['attackdamageperlevel']);
-            $statistics_query->bindParam(':attackspeedoffset', $this->stats['attackspeedoffset']);
-            $statistics_query->bindParam(':attackspeedperlevel', $this->stats['attackspeedperlevel']);
-
-
-            if($champion_query->execute()){
-                if(!($statistics_query->execute())){
-                    print_r($statistics_query->errorInfo());
-                    printf("Failed to update statistics to champion");
-                }
-                return true;
-            } else {  
-                print_r($champion_query->errorInfo());
-                return false;
-            } 
-        }
-
-
-        public function delete_champion(){
-            $champion_query = $this->conn->prepare('DELETE FROM ' . $this->champ_table . ' WHERE id = :id');
-            $champion_query->bindParam(':id', $this->id);
-
-            $statistics_query = $this->conn->prepare('DELETE FROM ' . $this->stats_table . ' WHERE id = :id');
-            $statistics_query->bindParam(':id', $this->id);
-
-            if($champion_query->execute()){
-                if(!($statistics_query->execute())){
-                    print_r($statistics_query->errorInfo());
-                    printf("Failed to delete statistics of champion");
-                }
-                return true;
-            } else {  
-                print_r($champion_query->errorInfo());
-                printf('Failed to delete champion');
-                return false;
-            } 
-        }
     }

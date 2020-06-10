@@ -104,7 +104,7 @@
 
     </div>
 
-    <div class="module-wrapper-monster">
+    <div class="module-wrapper-monster ">
 
         <div class="show-all-champions">
             <h2 id="show_all_monsters"> Click the button to show all Neutral Monsters</h2>
