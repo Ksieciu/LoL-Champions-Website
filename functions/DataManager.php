@@ -34,7 +34,7 @@ class DataManager{
                     break;
                 }
                 // making divs for columns, printing champions icons
-                echo '<div class-"col-md-4">';
+                echo '<div class="col-md-4">';
                 echo '<img src="' . $champion_data[$counter]->icon . '">';
                 echo '</div>';
                 $counter++;
