@@ -1,3 +1,15 @@
+<?php
+    include_once 'functions/Client.php';
+
+    if($_POST && isset($_POST) && !empty($_POST)){
+        $client = new Client;
+        $client->register($_POST['email'], $_POST['password']);
+        // header('location: login.php');
+};
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>

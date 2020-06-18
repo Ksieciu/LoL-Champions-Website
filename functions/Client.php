@@ -51,11 +51,6 @@ class Client{
         return $this->instance->__soapCall('login', array($header_params));
     }
 
-    public function getName($id_array){
-        return $this->instance->__soapCall('getStudentName', $id_array);
-    }
-
-
 }
 
 // $client = new Client;
