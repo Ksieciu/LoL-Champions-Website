@@ -31,7 +31,7 @@ class Client{
         $header_params = new SoapVar($account, SOAP_ENC_OBJECT);
         $header = new SoapHeader('reg', 'register', $header_params, false);
         $this->instance->__setSoapHeaders(array($header));
-        return $this->instance->__soapCall('register', array($header));
+        return $this->instance->__soapCall('register', array($header_params));
     }
 
     public function login($email, $password){
@@ -41,7 +41,7 @@ class Client{
         $header_params = new SoapVar($account, SOAP_ENC_OBJECT);
         $header = new SoapHeader('log', 'login', $header_params, false);
         $this->instance->__setSoapHeaders(array($header));
-        return $this->instance->__soapCall('login', array($header));
+        return $this->instance->__soapCall('login', array($header_params));
     }
 
     public function getName($id_array){

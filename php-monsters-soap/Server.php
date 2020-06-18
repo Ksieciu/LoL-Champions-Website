@@ -68,29 +68,28 @@ class Server{
     public function login($header_params){
         $query = $this->conn->prepare('SELECT * FROM users WHERE email = :email LIMIT 1');
         $email = $header_params->email;
-        // $query->bindParam();
-        $query->execute([':email', $email]);
+        $query->bindParam(':email', $header_params->email);
+        $query->execute();
 
         $row = $query->fetch(PDO::FETCH_ASSOC);
         $result = new stdClass();
 
-        if($email === 'test@test.com'){
+        if($row['email'] = $header_params->email){
             if($row['password'] !== $header_params->password){
                 $result->msg = "Wrong password!";
                 $result->success = false;
-                $result->$row['id'];
+                $result->email = $row['email'];
                 return $result;
             } else {
                 $result->msg = "You have succesfully logged in!";
                 $result->success = true;
-                $result->$row['id'];
-                // $header_params = new SoapVar($account, SOAP_ENC_OBJECT);
+                $result->email = $row['email'];
                 return $result;
             }
         } else {
             $result->msg = "There is no such email in database!";
             $result->success = false;
-            // $header_params = new SoapVar($account, SOAP_ENC_OBJECT);
+            $result->email = gettype($email);
             return $result;
         }
     }
