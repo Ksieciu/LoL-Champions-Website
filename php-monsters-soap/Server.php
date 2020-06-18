@@ -79,11 +79,12 @@ class Server{
                 $result->msg = "Wrong password!";
                 $result->success = false;
                 $result->email = $row['email'];
+                $result->email = $row['id'];
                 return $result;
             } else {
                 $result->msg = "You have succesfully logged in!";
                 $result->success = true;
-                $result->email = $row['email'];
+                $result->email = $row['id'];
                 return $result;
             }
         } else {
