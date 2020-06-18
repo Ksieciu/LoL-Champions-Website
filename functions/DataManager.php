@@ -21,11 +21,11 @@ class DataManager{
 
         // print data for debuggin purpose
         // print_r($champion_data[0]->icon);
-        echo '<div class="container">';
+        echo '<div class="champ-list">';
 
         // while for creating rows
         while($cond){
-            echo '<div class="row">';
+          //  echo '<div class="row">';
 
             // loop for making number of columns, if no more champs, then break for and while loops.
             for($i = 0; $i < 8; $i++){
@@ -34,8 +34,10 @@ class DataManager{
                     break;
                 }
                 // making divs for columns, printing champions icons
-                echo '<div class="col-md-4">';
-                echo '<img src="' . $champion_data[$counter]->icon . '">';
+                echo '<div class="champ">';
+                echo '<img src="' . $champion_data[$counter]->icon . '" style="padding:0.3em 0.3em 0.3em 0.3em">';
+                echo  $champion_data[$counter]->name;
+                echo  $champion_data[$counter]->title;
                 echo '</div>';
                 $counter++;
             }

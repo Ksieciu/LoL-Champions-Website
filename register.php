@@ -90,6 +90,7 @@
 </footer> 
 
 <script src="scripts/navscript.js"></script>
+<script src="scripts/loger.js"></script>
 
 </body>
 </html>
