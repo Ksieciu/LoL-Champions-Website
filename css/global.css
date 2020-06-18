@@ -25,6 +25,7 @@ a:hover{
     background-color:rebeccapurple;
     padding: 20px;
     color: white;
+    padding-top: 0.1em;
 }
 .sticky {
     position: fixed;
@@ -43,6 +44,7 @@ hr {
 a { 
     text-decoration: none;
     color: rebeccapurple;
+    
     
 
 }
@@ -82,7 +84,7 @@ li {
     }
 	a:hover{  
     background-color:rebeccapurple;
-    padding: 0.1em;
+    
     color: white;
 }
 }
@@ -104,7 +106,7 @@ li {
     background-position: left;
     background-repeat: no-repeat, repeat;
     background-size: 30%; 
-    margin-right: -40%;
+
     
 }
 
@@ -174,7 +176,7 @@ color: white;
   #show_button{
     background-color: rebeccapurple;
     color: white;
-    font-size: 0.6em;
+    font-size: 19.2px;
     border-radius: 8px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
     padding: 0.25em 0.75em;
@@ -238,7 +240,7 @@ color: white;
 #monster_button {
     background-color:white ;
     color: rebeccapurple;
-    font-size: 0.6em;
+    font-size: 19.2px;
     border-radius: 8px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
     padding: 0.25em 0.75em;
@@ -255,8 +257,111 @@ color: white;
      }
  
 
- footer 
+footer 
+     {
+    color:rebeccapurple;
+    background-color: white;
+    bottom:0;
+    text-align: center;
+    width: 100%;
+    margin-left: -0.5%;
+    font-size: 16px;
+    opacity: 75%;
+    position: fixed;
+    bottom: 0;  
+     }
+ .footer 
  {
     color:rebeccapurple;
+    position: absolute;
+    bottom:0;
+    background-color: white;
 
  }
+
+      /*register page r*/
+.register-body{
+    background-image: url(../images/register.jpg); 
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    background-size : cover;
+  
+
+}
+ .register-wrapper{
+
+
+padding-top: 10em;
+padding-bottom: 3em;
+white-space: normal;
+overflow: hidden;
+position: relative;
+ }
+
+ .register-box {
+     text-align: center;
+     font-size: 1.2em;
+     padding: 5em 5em 5em 5em;
+     background-color: white;
+     margin-left: 15%;
+     margin-right: 15%;
+     color: rebeccapurple;
+     opacity: 75%;
+     
+ }
+
+ .reg-btn{
+
+    background-color:rebeccapurple;
+    color: white;
+    font-size: 19.2px;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+    padding: 0.25em 0.75em;
+    min-width: 10ch;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: rebeccapurple;
+ }
+
+ .reg-btn:hover {
+    background-color: green;
+    color: white; 
+    cursor: pointer;
+     }
+
+       /*login page*/
+ 
+     .login-body{
+        background-image: url(../images/login.jpg); 
+        background-position: center;
+        background-repeat: repeat no-repeat;
+        size: auto;
+      
+    
+    }
+     .login-wrapper{
+    
+    
+    padding-top: 10em;
+    padding-bottom: 3em;
+    white-space: normal;
+    overflow: hidden;
+    position: relative;
+     }
+    
+     .login-box {
+         text-align: center;
+         font-size: 1.2em;
+         padding: 5em 5em 5em 5em;
+         background-color: white;
+         margin-left: 15%;
+         margin-right: 15%;
+         color: rebeccapurple;
+         opacity: 75%;
+         
+     }
+    

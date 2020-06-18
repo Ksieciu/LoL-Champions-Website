@@ -1,7 +1,3 @@
-<?php
-    include 'functions/DataManager.php';
-    $data = new DataManager('http://localhost/webservices/projectLoL/php-champions-rest-api/api/champion/');
-?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -13,17 +9,17 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="register-body">
     <div class="header" id="header">
 
     </div>
 <div class="stick-nav">
 <ul class="nav-elements">
     <li class="right-elem"></li>
-    <li ><a href="#chemp_find">Find your champion</a></li>
-    <li><a href="#add_new">Add new champion</a></li>
-    <li><a href="#show_all">Show all Champions</a></li>
-    <li><a href="#show_all_monsters">Show all Monsters</a></li>
+    <li ><a href="./index.php#chemp_find">Find your champion</a></li>
+    <li><a href="./index.php#add_new">Add new champion</a></li>
+    <li><a href="./index.php#show_all">Show all Champions</a></li>
+    <li><a href="./index.php#show_all_monsters">Show all Monsters</a></li>
     
 
     <li class="left-elem"></li>
@@ -33,7 +29,7 @@
           <path fill-rule="evenodd" d="M13 7.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0v-2z"/></a>
         </svg></li>
 
-        <li title="Login"><a href="#login">
+        <li title="Login"><a href="./login.php">
         <svg class="bi bi-door-closed" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2zm1 0v13h8V2H4z"/>
             <path d="M7 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
@@ -53,7 +49,7 @@
             <path fill-rule="evenodd" d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/></a>
           </svg></li>
 
-    <li title="Go UP to the home page"><a href="#header">
+    <li title="Go UP to the home page"><a href="./index.php#header">
         <svg class="bi bi-house" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
         <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/></a>
@@ -62,63 +58,27 @@
 </ul><hr>
 
     </div>
-
-
-    <div class="search-block">
-
-            <div class="search-box">
-                <h2 id="chemp_find"> Find your champion</h2>
-                <input type="search" class="input-box" name="ch_search" placeholder=" Find your champion..."><br>
-                    <button type="submit" name="sbutton" id="sbutton">
-                        <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-                            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-                  </svg>Search</button>
+<div class="register-wrapper">
+    <div class="register-box">
+        <div class="registration">
+<H1>Register your account!</H1>
+            <form name="register" style="align-items: center;">
+            Username:<br> <input type="text" class="input-box" name="username" placeholder="Enter your username"><br> 
+            Password: <br> <input type="password" class="input-box" name="password" placeholder="Enter your password"><br>
+            E-mail:<br>  <input type="text" class="input-box" name="mail" placeholder="Enter your e-mail address"><br><br>
+            <button type="submit" name="reg-btn" class="reg-btn">Register</button>
             </div>
-
     </div>
+</div>
 
 
-    <div class="module-wrapper-invert">
+  <footer>
 
-        <div class="add-box">
-            <h2 id="add_new"> Add new champion</h2><form name="add_new" style="align-items: center;">
-            Champions name:<br> <input type="text" class="input-box" name="ch_name" placeholder="Enter your champions name"><br> 
-            Champions title: <br> <input type="text" class="input-box" name="ch_title" placeholder="Enter your champions title"><br>
-            Champions description:<br>  <input type="text" class="input-box" name="ch_desc" placeholder="Enter your champions description"><br>
-            Add file with stats:<br><input type="file" value="Add stats" URL="#"><br>
-        </div>
-            <button type="submit" name="add_champ" id="add_champ">Add</button> </form>
-        
-
-    </div>
-
-    
-    <div class="module-wrapper-pure">
-
-        <div class="show-all-champions">
-            <h2 id="show_all"> Click the button to show all Champions</h2>
-            <button type="submit" name="show_button" id="show_button">SHOW ALL</button>
-            <?php $data->show_champs_icons('show_all_champions.php'); ?>
-        </div>
-
-    </div>
-
-    <div class="module-wrapper-monster">
-
-       
-            Click the button to show all Neutral Monsters<br>
-            <button type="submit" name="monster_button" id="monster_button">SHOW ALL</button>
-        </div>
-
-    </div>
-
-
-
-<footer>
     © 2020 by WW Dev - Sebastian Winiarski & Piotr Wroblewski
-</footer>
+
+</footer> 
 
 <script src="scripts/navscript.js"></script>
+
 </body>
 </html>
