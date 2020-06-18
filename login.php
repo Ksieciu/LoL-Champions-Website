@@ -33,7 +33,7 @@ if($_POST && isset($_POST) && !empty($_POST)){
     
     // if no errors then proceed with authentication via SOAP
     if($email_err === '' && $password_err === ''){
-        include_once '/functions/Client.php';
+        include_once 'functions/Client.php';
         $client = new Client;
         $login_status_arr = $client->login($_POST['email'], $_POST['password']);
         
@@ -114,13 +114,12 @@ if($_POST && isset($_POST) && !empty($_POST)){
         <div class="login">
 <H1>Login to your account!</H1>
             <form name="login" style="align-items: center;" method="POST">
-            E-mail:<br>  <input type="text" class="input-box" name="mail" placeholder="Enter your e-mail address" value="<?php echo $email; ?>"><br>
+            E-mail:<br>  <input type="text" class="input-box" name="email" placeholder="Enter your e-mail address" value="<?php echo $email; ?>"><br>
             <span class="help-block"><?php echo $email_err; ?></span><br>
             Password: <br> <input type="password" class="input-box" name="password" placeholder="Enter your password"><br>
             <span class="help-block"><?php echo $password_err; ?></span><br>
-            <button type="submit" name="login-btn" class="reg-btn">Login</button><br>
-            <span class="help-block"><?php if($login_status_arr){ echo $login_status_arr->msg; 
-                echo $login_status_arr->email; }?></span>
+            <button type="submit" name="login-btn" class="reg-btn">Login</button><br><br>
+            <span class="help-block"><?php if($login_status_arr){ echo $login_status_arr->msg;}?></span>
             </div>
     </div>
 </div>
