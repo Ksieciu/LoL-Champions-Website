@@ -62,7 +62,7 @@
     <div class="register-box">
         <div class="registration">
 <H1>Register your account!</H1>
-            <form name="register" style="align-items: center;">
+            <form name="register" style="align-items: center;" method="POST">
             Username:<br> <input type="text" class="input-box" name="username" placeholder="Enter your username"><br> 
             Password: <br> <input type="password" class="input-box" name="password" placeholder="Enter your password"><br>
             E-mail:<br>  <input type="text" class="input-box" name="mail" placeholder="Enter your e-mail address"><br><br>

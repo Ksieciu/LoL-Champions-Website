@@ -62,7 +62,7 @@
     <div class="login-box">
         <div class="login">
 <H1>Login to your account!</H1>
-            <form name="login" style="align-items: center;">
+            <form name="login" style="align-items: center;" method="POST">
             E-mail:<br>  <input type="text" class="input-box" name="mail" placeholder="Enter your e-mail address"><br>
             Password: <br> <input type="password" class="input-box" name="password" placeholder="Enter your password"><br><br>
             <button type="submit" name="login-btn" class="reg-btn">Login</button>
