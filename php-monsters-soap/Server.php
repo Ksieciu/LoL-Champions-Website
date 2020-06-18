@@ -67,7 +67,6 @@ class Server{
 
     public function login($header_params){
         $query = $this->conn->prepare('SELECT * FROM users WHERE email = :email LIMIT 1');
-        $email = $header_params->email;
         $query->bindParam(':email', $header_params->email);
         $query->execute();
 
@@ -79,18 +78,17 @@ class Server{
                 $result->msg = "Wrong password!";
                 $result->success = false;
                 $result->email = $row['email'];
-                $result->email = $row['id'];
                 return $result;
             } else {
                 $result->msg = "You have succesfully logged in!";
                 $result->success = true;
+                $result->email = $row['email'];
                 $result->email = $row['id'];
                 return $result;
             }
         } else {
             $result->msg = "There is no such email in database!";
             $result->success = false;
-            $result->email = gettype($email);
             return $result;
         }
     }

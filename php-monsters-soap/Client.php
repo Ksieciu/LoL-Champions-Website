@@ -35,12 +35,19 @@ class Client{
     }
 
     public function login($email, $password){
+
+        // creating new empty object to save passed parameters
         $account = new stdClass();
         $account->email = $email;
         $account->password = $password;
+
+        // creating soap type variable - encoding into soap object
         $header_params = new SoapVar($account, SOAP_ENC_OBJECT);
+
+        // creating and set SoapHeader
         $header = new SoapHeader('log', 'login', $header_params, false);
         $this->instance->__setSoapHeaders(array($header));
+        // calling soap function on server
         return $this->instance->__soapCall('login', array($header_params));
     }
 

@@ -4,7 +4,7 @@ session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-  header("location: welcome.php");
+  header("location: index.php");
   exit;
 }
  
@@ -33,15 +33,15 @@ if($_POST && isset($_POST) && !empty($_POST)){
     
     // if no errors then proceed with authentication via SOAP
     if($email_err === '' && $password_err === ''){
-        include_once 'Client.php';
+        include_once '/functions/Client.php';
         $client = new Client;
-        $login_status_arr = $client->login(trim($_POST['email']), $_POST['password']);
+        $login_status_arr = $client->login($_POST['email'], $_POST['password']);
         
         if($login_status_arr->success){
             $_SESSION["loggedin"] = true;
             $_SESSION["email"] = $login_status_arr->email;
             $_SESSION["id"] = $login_status_arr->id;
-            header("location: welcome.php");
+            header("location: index.php");
         }
     }
 };
@@ -114,31 +114,17 @@ if($_POST && isset($_POST) && !empty($_POST)){
         <div class="login">
 <H1>Login to your account!</H1>
             <form name="login" style="align-items: center;" method="POST">
-            E-mail:<br>  <input type="text" class="input-box" name="mail" placeholder="Enter your e-mail address"><br>
-            Password: <br> <input type="password" class="input-box" name="password" placeholder="Enter your password"><br><br>
-            <button type="submit" name="login-btn" class="reg-btn">Login</button>
+            E-mail:<br>  <input type="text" class="input-box" name="mail" placeholder="Enter your e-mail address" value="<?php echo $email; ?>"><br>
+            <span class="help-block"><?php echo $email_err; ?></span><br>
+            Password: <br> <input type="password" class="input-box" name="password" placeholder="Enter your password"><br>
+            <span class="help-block"><?php echo $password_err; ?></span><br>
+            <button type="submit" name="login-btn" class="reg-btn">Login</button><br>
+            <span class="help-block"><?php if($login_status_arr){ echo $login_status_arr->msg; 
+                echo $login_status_arr->email; }?></span>
             </div>
     </div>
 </div>
 
-<form method="POST">
-    <div class="form-group <?php echo ($email_err !== '') ? 'has-error' : ''; ?>">
-        <label>email</label>
-        <input type="email" name="email" class="form-control" value="<?php echo $email; ?>">
-        <span class="help-block"><?php echo $email_err; ?></span>
-    </div>    
-    <div class="form-group <?php echo ($password_err !== '') ? 'has-error' : ''; ?>">
-        <label>Password</label>
-        <input type="password" name="password" class="form-control">
-        <span class="help-block"><?php echo $password_err; ?></span>
-    </div>
-    <span class="help-block"><?php if($login_status_arr){ echo $login_status_arr->msg; 
-        echo $login_status_arr->email; }?></span>
-    <div class="form-group">
-        <input type="submit" class="btn btn-primary" value="Login">
-    </div>
-    <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
-</form>
 
 
   <footer>
