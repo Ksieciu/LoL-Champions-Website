@@ -4,7 +4,7 @@
     if($_POST && isset($_POST) && !empty($_POST)){
         $client = new Client;
         $client->register($_POST['email'], $_POST['password']);
-
+        header('location: login.php');
 };
 
 ?>

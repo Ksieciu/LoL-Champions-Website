@@ -40,32 +40,58 @@ class Server{
         $query->bindParam(':email', $header_params->email);
         $query->execute();
 
+        // check if there is already account with given email
+        // if not, then create account
         if($query->rowCount() > 0){
             throw new SOAPFault(401, 'Account with that email already exists!');
         } else {
             $query = $this->conn->prepare('INSERT INTO ' . 'users' . '
-            SET
-                email = :email,
-                password = :password
-                ');
+                SET
+                    email = :email,
+                    password = :password
+                    ');
 
-            // binding parameters
             $query->bindParam(':email', $header_params->email);
             $query->bindParam(':password', $header_params->password);
 
             if($query->execute()){
-                
                 echo "Account created!";
                 return true;
             } else {  
-                echo '<script language="javascript">';
-        echo 'alert("message successfully sent")';
-        echo '</script>';
                 print_r($query->errorInfo());
                 echo "Failed to create an account!";
                 return false;
             } 
+        }
+    }
 
+    public function login($header_params){
+        $query = $this->conn->prepare('SELECT * FROM users WHERE email = :email LIMIT 1');
+        $email = $header_params->email;
+        // $query->bindParam();
+        $query->execute([':email', $email]);
+
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+        $result = new stdClass();
+
+        if($email === 'test@test.com'){
+            if($row['password'] !== $header_params->password){
+                $result->msg = "Wrong password!";
+                $result->success = false;
+                $result->$row['id'];
+                return $result;
+            } else {
+                $result->msg = "You have succesfully logged in!";
+                $result->success = true;
+                $result->$row['id'];
+                // $header_params = new SoapVar($account, SOAP_ENC_OBJECT);
+                return $result;
+            }
+        } else {
+            $result->msg = "There is no such email in database!";
+            $result->success = false;
+            // $header_params = new SoapVar($account, SOAP_ENC_OBJECT);
+            return $result;
         }
     }
 
