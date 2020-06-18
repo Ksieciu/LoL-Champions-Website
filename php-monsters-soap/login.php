@@ -35,7 +35,7 @@ if($_POST && isset($_POST) && !empty($_POST)){
     if($email_err === '' && $password_err === ''){
         include_once 'Client.php';
         $client = new Client;
-        $login_status_arr = $client->login($_POST['email'], $_POST['password']);
+        $login_status_arr = $client->login(trim($_POST['email']), $_POST['password']);
         
         if($login_status_arr->success){
             $_SESSION["loggedin"] = true;
@@ -62,7 +62,7 @@ if($_POST && isset($_POST) && !empty($_POST)){
     <div class="wrapper">
         <h2>Login</h2>
         <form method="POST">
-            <div class="form-group <?php echo ($username_er !== '') ? 'has-error' : ''; ?>">
+            <div class="form-group <?php echo ($email_err !== '') ? 'has-error' : ''; ?>">
                 <label>email</label>
                 <input type="email" name="email" class="form-control" value="<?php echo $email; ?>">
                 <span class="help-block"><?php echo $email_err; ?></span>
@@ -73,7 +73,7 @@ if($_POST && isset($_POST) && !empty($_POST)){
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
             <span class="help-block"><?php if($login_status_arr){ echo $login_status_arr->msg; 
-                echo $login_status_arr->id; }?></span>
+                echo $login_status_arr->email; }?></span>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
