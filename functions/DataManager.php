@@ -56,7 +56,7 @@ class DataManager{
         $champion_data = json_decode($json_data);
 
         foreach ($champion_data as $key => $value) {
-            echo '<div class="' . $key . '">' . $value . '</div>';
+            echo '<div class="' . $key . '">'. ucfirst($key). ': ' . $value . '</div>';
         }
     }
 
