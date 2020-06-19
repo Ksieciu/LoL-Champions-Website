@@ -1,6 +1,10 @@
 <?php
     include 'functions/DataManager.php';
-?>
+    include 'functions/MonsterManager.php';
+    $data = new DataManager('http://localhost/Lol-Heroes/LoL-Champions-Website/php-champions-rest-api/api/champion/');
+ $monster_data = new MonsterManager('http://localhost/Lol-Heroes/LoL-Champions-Website/php-champions-rest-api/api/champion/');
+   // $data = new DataManager('http://localhost/Lol-Heroes/LoL-Champions-Website/php-champions-rest-api/api/champion/');
+?> 
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -99,9 +103,9 @@
             <h2 id="show_all"> Click the button to show all Champions</h2>
             <button type="submit" name="show_button" id="show_button" method="POST">SHOW ALL</button>
         <div class="champ-list">
-            <?php  if(isset($_POST['show_button'])) { 
+            <?php  
              
-            echo $data->show_champs_icons('show_all_champions.php');} ?>
+            $data->show_champs_icons('show_all_champions.php'); ?>
 
         </div>
         </div>
@@ -113,6 +117,8 @@
        
             Click the button to show all Neutral Monsters<br>
             <button type="submit" name="monster_button" id="monster_button">SHOW ALL</button>
+             <?php $monster_data->show_monsters_icons('show_all_monsters.php'); ?>
+        
         </div>
 
     </div>

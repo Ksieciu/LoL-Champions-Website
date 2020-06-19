@@ -17,46 +17,37 @@
     $db = $database->connect();
 
     // Create champion object
-    $champion = new Champion($db);
+    $monster = new Monster($db);
 
     $data = json_decode(file_get_contents("php://input"));
 
-    $champion->id = $data->id;
-    $champion->name = $data->name;
-    $champion->title = $data->title;
-    $champion->icon = $data->icon;
-    $champion->description = $data->description;
+    $monster->id = $data->id;
+    $monster->name = $data->name;
+    $monster->title = $data->title;
+    $monster->icon = $data->icon;
+    $monster->description = $data->description;
     
-    $champion->stats['hp'] = $data->hp;
-    $champion->stats['hpperlevel'] = $data->hpperlevel;
-    $champion->stats['mp'] = $data->mp;
-    $champion->stats['mpperlevel'] = $data->mpperlevel;
-    $champion->stats['movespeed'] = $data->movespeed;
-    $champion->stats['armor'] = $data->armor;
-    $champion->stats['armorperlevel'] = $data->armorperlevel;
-    $champion->stats['spellblock'] = $data->spellblock;
-    $champion->stats['spellblockperlevel'] = $data->spellblockperlevel;
-    $champion->stats['attackrange'] = $data->attackrange;
-    $champion->stats['hpregen'] = $data->hpregen;
-    $champion->stats['hpregenperlevel'] = $data->hpregenperlevel;
-    $champion->stats['mpregen'] = $data->mpregen;
-    $champion->stats['mpregenperlevel'] = $data->mpregenperlevel;
-    $champion->stats['crit'] = $data->crit;
-    $champion->stats['critperlevel'] = $data->critperlevel;
-    $champion->stats['attackdamage'] = $data->attackdamage;
-    $champion->stats['attackdamageperlevel'] = $data->attackdamageperlevel;
-    $champion->stats['attackspeedoffset'] = $data->attackspeedoffset;
-    $champion->stats['attackspeedperlevel'] = $data->attackspeedperlevel;
+    $monster->stats['hp'] = $data->hp;
+    $monster->stats['movespeed'] = $data->movespeed;
+    $monster->stats['armor'] = $data->armor;
+    $monster->stats['spellblock'] = $data->spellblock;
+    $monster->stats['attackdamage'] = $data->attackdamage;
+    $monster->stats['attackspeedoffset'] = $data->attackspeedoffset;
+    $monster->gold = $data->gold;
+    $monster->exp = $data->exp;
+    $monster->spawnTime = $data->spawnTime;
+    $monster->respownTime = $data->respawnTime;
+    
 
 
 
     
-    if($champion->create_champion()){
+    if($champion->create_monster()){
         echo json_encode(
-            array('message' =>  'Created new champion!')
+            array('message' =>  'Created new monster!')
         );
     } else {
         echo json_encode(
-            array('message' => 'Failed to create champion!')
+            array('message' => 'Failed to create monster!')
         );
     }
