@@ -35,7 +35,7 @@ class DataManager{
                 }
                 // making divs for columns, printing champions icons
                 echo '<div class="champ">';
-                echo '<img src="' . $champion_data[$counter]->icon . '" style="padding:0.3em 0.3em 0.3em 0.3em">';
+                echo '<img src="' . $champion_data[$counter]->icon . '" style="padding:0.3em 0.3em 0.3em 0.3em"> <br>';
                 echo  $champion_data[$counter]->name;
                 echo  $champion_data[$counter]->title;
                 echo '</div>';

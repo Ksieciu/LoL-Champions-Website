@@ -99,27 +99,26 @@
     
     <div class="module-wrapper-pure">
 
-        <div class="show-all-champions">
+        
             <h2 id="show_all"> Click the button to show all Champions</h2>
             <button type="submit" name="show_button" id="show_button" method="POST">SHOW ALL</button>
-        <div class="champ-list">
+      
             <?php  
              
             $data->show_champs_icons('show_all_champions.php'); ?>
 
-        </div>
-        </div>
-
+        
     </div>
-
+</div>
     <div class="module-wrapper-monster">
 
-       
+    
             Click the button to show all Neutral Monsters<br>
             <button type="submit" name="monster_button" id="monster_button">SHOW ALL</button>
+            
              <?php $monster_data->show_monsters_icons('show_all_monsters.php'); ?>
+
         
-        </div>
 
     </div>
 

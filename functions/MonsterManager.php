@@ -21,7 +21,7 @@ class MonsterManager{
 
         // print data for debuggin purpose
         // print_r($champion_data[0]->icon);
-        echo '<div class="champ-list">';
+        echo '<div class="monster-list">';
 
         // while for creating rows
         while($cond){
@@ -34,10 +34,10 @@ class MonsterManager{
                     break;
                 }
                 // making divs for columns, printing champions icons
-                echo '<div class="champ">';
-                echo '<img src="' . $monster_data[$counter]->icon . '" style="padding:0.3em 0.3em 0.3em 0.3em">';
+                echo '<div class="monster">';
+                echo '<img src="' . $monster_data[$counter]->icon . '" style="padding:0.3em 0.3em 0.3em 0.3em"> <br>';
                 echo  $monster_data[$counter]->name;
-                echo  $monster_data[$counter]->title;
+                
                 echo '</div>';
                 $counter++;
             }
