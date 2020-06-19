@@ -1,3 +1,8 @@
+<?php
+    include 'functions/DataManager.php';
+    include 'functions/MonsterManager.php';
+    $data = new DataManager('http://localhost/Lol-Heroes/LoL-Champions-Website/php-champions-rest-api/api/champion/');
+?>
 
 <!DOCTYPE html>
 <html lang="pl">
@@ -61,6 +66,7 @@
     </div>
 <div class="details-wrapper">
     <div class="details-box">
+     <?php $data->show_champion_info('show_champions.php?='); ?>
         <div class="details">
 <button type="submit" class="delete-btn" method="Post" >Delete champion </button>
 <button type="submit" class="fav-btn" method="Post" ><svg class="bi bi-heart" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

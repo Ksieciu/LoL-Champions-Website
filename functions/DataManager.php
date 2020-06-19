@@ -48,6 +48,16 @@ class DataManager{
         }
     }
 
+    public function show_champion_info($api_func){
+        $url = $this->api_url . $api_func;
+        $json_data = file_get_contents($url);
+        $champion_data = json_decode($json_data);
+
+        foreach ($champion_data as $key => $value) {
+            echo '<div class="' . $key . '">' . $value . '</div>';
+        }
+    }
+
     
 
 
