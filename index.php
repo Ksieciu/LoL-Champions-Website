@@ -103,8 +103,8 @@
     <div class="module-wrapper-pure">
 
         
-            <h2 id="show_all"> Click the button to show all Champions</h2>
-            <button type="submit" name="show_button" id="show_button" method="POST">SHOW ALL</button>
+            <h2 id="show_all"> List of all Champions</h2>
+           <!---       <button type="submit" name="show_button" id="show_button" method="POST">SHOW ALL</button> -->  
       
             <?php  
              
@@ -116,8 +116,8 @@
     <div class="module-wrapper-monster">
 
     
-            Click the button to show all Neutral Monsters<br>
-            <button type="submit" name="monster_button" id="monster_button">SHOW ALL</button>
+           List of all Neutral Monsters<br>
+       <!---         <button type="submit" name="monster_button" id="monster_button">SHOW ALL</button> -->  
             
              <?php $monster_data->show_monsters_icons('show_all_monsters.php'); ?>
 
@@ -125,7 +125,17 @@
 
     </div>
 
+    <div class="module-wrapper-buff">
 
+    
+List of Buffs <br>
+  <!--- -->  
+
+ <?php $monster_data->show_monsters_icons('show_all_monsters.php'); ?>
+
+
+
+</div>
 
 <footer>
     © 2020 by WW Dev - Sebastian Winiarski & Piotr Wroblewski

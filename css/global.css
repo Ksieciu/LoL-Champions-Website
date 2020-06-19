@@ -481,6 +481,29 @@ position: relative;
         cursor: pointer;
          }
 
+         .d-fav-btn{
+            background-color:orange;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+            padding: 0.25em 0.75em;
+            min-width: 10ch;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: orange;
+            margin-bottom: 1em;
+           
+            
+           
+         }
+        
+        .d-fav-btn:hover {
+            background-color: white;
+            color: orange; 
+            cursor: pointer;
+             }
     .more-btn{
             background-color:green;
             color: white;
@@ -531,5 +554,14 @@ position: relative;
 
      }
 
-
+     .module-wrapper-buff {
+        color: rebeccapurple ;
+        text-align: center;
+        font-size: 2em;
+        height: 50%;
+        padding-top: 100px;
+        padding-bottom: 50px;;
+        background-color: white;
+        
+     }
 
