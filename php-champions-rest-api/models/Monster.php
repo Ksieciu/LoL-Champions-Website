@@ -29,25 +29,9 @@ class Monster{
     }
 
     public function show_all_monsters(){
-        $query = $this->conn->prepare('SELECT
-                m.id,
-                m.name,
-                m.icon,
-                m.description,
-                m.hp,
-                m.armor,
-                m.spellblock,
-                m.attackdamage,
-                m.attackspeedoffset,
-                m.movespeed,
-                m.gold,
-                m.exp,
-                m.spawntime,
-                m.resprawntime
-            FROM
-                ' . $this->monster_table . ' m 
-            ORDER BY
-                c.name ASC');
+        $query = $this->conn->prepare('SELECT * FROM
+                ' . $this->monster_table . ' 
+            ORDER BY name ASC');
 
         $query->execute();
         
@@ -110,7 +94,6 @@ class Monster{
             SET
                 id = :id,
                 name = :name,
-                title = :title,
                 icon = :icon,
                 description = :description,
                 gold = :gold,
@@ -128,13 +111,12 @@ class Monster{
         // binding parameters
         $query->bindParam(':id', $this->id);
         $query->bindParam(':name', $this->name);
-        $query->bindParam(':title', $this->title);
         $query->bindParam(':icon', $this->icon);
         $query->bindParam(':description', $this->description);
         $query->bindParam(':gold', $this->gold);
         $query->bindParam(':exp', $this->exp);
         $query->bindParam(':spawntime', $this->spawnTime);
-        $query->bindParam(':resprawntime', $this->resprawnTime);
+        $query->bindParam(':respawntime', $this->respawnTime);
         $query->bindParam(':hp', $this->stats['hp']);
         $query->bindParam(':movespeed', $this->stats['movespeed']);
         $query->bindParam(':armor', $this->stats['armor']);

@@ -28,7 +28,6 @@
             $monsters_info = array(
                 'id' => $id,
                 'name' => $name,
-                'title' => $title,
                 'icon' => $icon,
                 'description' => $description,
                 'hp' => $hp,
@@ -39,11 +38,8 @@
                 'attackspeedoffset' => $attackspeedoffset,
                 'gold' => $gold,
                 'exp' => $exp,
-                'spawnTime' => $spawnTime,
-                'respownTime' => $respawnTime,
-        
- 
-            
+                'spawnTime' => $spawntime,
+                'respownTime' => $respawntime,
             );
             array_push($monsters_arr, $monsters_info);
         }
