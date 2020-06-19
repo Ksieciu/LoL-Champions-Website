@@ -2,9 +2,10 @@
     include 'functions/DataManager.php';
     include 'functions/MonsterManager.php';
     $data = new DataManager('http://localhost/Lol-Heroes/LoL-Champions-Website/php-champions-rest-api/api/champion/');
- $monster_data = new MonsterManager('http://localhost/Lol-Heroes/LoL-Champions-Website/php-champions-rest-api/api/champion/');
+    $monster_data = new MonsterManager('http://localhost/Lol-Heroes/LoL-Champions-Website/php-champions-rest-api/api/champion/');
    // $data = new DataManager('http://localhost/Lol-Heroes/LoL-Champions-Website/php-champions-rest-api/api/champion/');
 ?> 
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -70,7 +71,7 @@
     <div class="search-block">
 
             <div class="search-box">
-                <h2 id="chemp_find"> Find your champion</h2>
+                <h2 id="chemp_find">Find your champion</h2>
                 <input type="search" class="input-box" name="ch_search" placeholder=" Find your champion..."><br>
                     <button type="submit" name="sbutton" id="sbutton">
                         <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -86,15 +87,15 @@
 
         <div class="add-box">
     
-            <h2 id="add_new"> Add new champion</h2><form name="add_new" style="align-items: center;">
-            Champions ID:<br> <input type="number" class="input-box" name="ch_id" placeholder="Enter your champions id"><br> 
-            Champions name:<br> <input type="text" class="input-box" name="ch_name" placeholder="Enter your champions name"><br> 
-            Champions title: <br> <input type="text" class="input-box" name="ch_title" placeholder="Enter your champions title"><br>
-            Champions description:<br>  <input type="text" class="input-box" name="ch_desc" placeholder="Enter your champions description"><br>
-            Champions icon URL:<br>  <input type="text" class="input-box" name="ch_icon" placeholder="Past yours icon url"><br>
+            <h2 id="add_new"> Add new champion</h2><form method="POST" name="add_new" style="align-items: center;">
+            Champions ID:<br> <input type="number" class="input-box" name="id" placeholder="Enter your champions id"><br> 
+            Champions name:<br> <input type="text" class="input-box" name="name" placeholder="Enter your champions name"><br> 
+            Champions title: <br> <input type="text" class="input-box" name="title" placeholder="Enter your champions title"><br>
+            Champions description:<br>  <input type="text" class="input-box" name="description" placeholder="Enter your champions description"><br>
+            Champions icon URL:<br>  <input type="text" class="input-box" name="icon" placeholder="Past yours icon url"><br>
 
         </div>
-            <button type="submit" name="add_champ" id="add_champ">Add</button> </form>
+            <button type="submit" id="add_champ" onclick="<?php $result = $data->create_champion($_POST); ?>">Add</button> </form>
         
 
     </div>

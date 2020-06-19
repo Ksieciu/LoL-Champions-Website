@@ -1,7 +1,7 @@
 <?php
 
     // Headers - first controls access to data,
-    // second - allows POST method,
+    // second - allows DELETE method,
     // third - which http headers can be used
     header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Methods: DELETE');

@@ -243,6 +243,7 @@
         public function update_champion(){
             $champion_query = $this->conn->prepare('UPDATE ' . $this->champ_table . '
                 SET
+                    id = :id,
                     name = :name,
                     title = :title,
                     icon = :icon,
@@ -266,6 +267,7 @@
 
             $statistics_query = $this->conn->prepare('UPDATE ' . $this->stats_table . '
             SET
+                id = :id,
                 hp = :hp,
                 hpperlevel = :hpperlevel,
                 mp = :mp,

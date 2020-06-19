@@ -21,10 +21,10 @@
     $champion->show_champion();
 
     $champion_arr = array(
+        'icon' => $champion->icon,
         'id' => $champion->id,
         'name' => $champion->name,
         'title' => $champion->title,
-        'icon' => $champion->icon,
         'description' => $champion->description,
     );
 

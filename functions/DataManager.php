@@ -53,11 +53,63 @@ class DataManager{
     public function show_all_info($api_func){
         $url = $this->api_url . $api_func;
         $json_data = file_get_contents($url);
-        $champion_data = json_decode($json_data);
+        $data= json_decode($json_data);
+        $id = 0;
+        
+        foreach ($data as $key => $value) {
+            if($key == 'id') { 
+                $id = $value;
 
-        foreach ($champion_data as $key => $value) {
-            echo '<div class="' . $key . '">'. ucfirst($key). ': ' . $value . '</div>';
+                echo  ucfirst($key) . ': <input class="' . $key . '" name="' . $key . '" value="' . $value . '"></input><br>';
+            }
+            elseif($key == 'icon'){
+                echo '<img src="' . $value . '" style="padding:0.3em 0.3em 0.3em 0.3em"> <br>';
+                echo ucfirst($key) . ': <input class="' . $key . '" name="' . $key . '" value="' . $value . '"></input><br>';
+            } else {
+                echo ucfirst($key) . ': <input class="' . $key . '" name="' . $key . '" value="' . $value . '"></input><br>';
+            }
         }
+        return $id;
+    }
+
+    // delete object based on passed endpoint name and object id
+    public function delete_object($api_func, $id){
+        $url = $this->api_url . $api_func;
+        $arr = array('id' => $id);
+        
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arr));
+        $result = curl_exec($ch);
+        $result = json_decode($result);
+        curl_close($ch);
+
+    }
+
+    public function create_champion($arr){
+        $url = $this->api_url . 'create_champion.php';
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arr));
+        $result = curl_exec($ch);
+        $result = json_decode($result);
+        curl_close($ch);
+        return $result;
+    }
+
+    public function update_object($api_func, $arr){
+        $url = $this->api_url . $api_func;
+        
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arr));
+        $result = curl_exec($ch);
+        $result = json_decode($result);
+        curl_close($ch);
     }
 
     
