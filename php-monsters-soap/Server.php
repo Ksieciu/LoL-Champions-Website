@@ -96,7 +96,7 @@ class Server{
 }
 
 
-$options = array('uri' => 'localhost/LoL-Champions-Website/php-monsters-soap/Server.php');
+$options = array('uri' => 'localhost/Lol-Heroes/LoL-Champions-Website/php-monsters-soap/Server.php');
 $server = new SoapServer(Null, $options);
 $server->setClass('Server');
 $server->handle();

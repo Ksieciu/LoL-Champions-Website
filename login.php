@@ -41,6 +41,8 @@ if($_POST && isset($_POST) && !empty($_POST)){
             $_SESSION["loggedin"] = true;
             $_SESSION["email"] = $login_status_arr->email;
             $_SESSION["id"] = $login_status_arr->id;
+            echo '<script>document.getElementById("logout").style.display = "auto";; </script>';
+            echo '<script>document.getElementById("fav").style.display = "auto";; </script>';
             header("location: index.php");
         }
     }

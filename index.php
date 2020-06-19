@@ -1,6 +1,5 @@
 <?php
     include 'functions/DataManager.php';
-    $data = new DataManager('http://localhost/webservices/projectLoL/php-champions-rest-api/api/champion/');
 ?>
 <!DOCTYPE html>
 <html lang="pl">

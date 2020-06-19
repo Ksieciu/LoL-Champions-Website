@@ -3,7 +3,7 @@
 
 class DataManager{
 
-    private $api_url; // = 'http://localhost/webservices/projectLoL/php-champions-rest-api/api/champion/';
+    private $api_url; // = 'http://localhost/Lol-Heroes/LoL-Champions-Website/php-champions-rest-api/api/champion/';
     // public $champion_data;
 
     public function __construct($url){
