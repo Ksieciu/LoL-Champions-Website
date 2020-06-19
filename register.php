@@ -1,10 +1,10 @@
 <?php
-    include_once 'functions/Client.php';
+    include 'functions/Client.php';
 
     if($_POST && isset($_POST) && !empty($_POST)){
         $client = new Client;
         $client->register($_POST['email'], $_POST['password']);
-        // header('location: login.php');
+        header('location: login.php');
 };
 
 ?>
@@ -75,8 +75,9 @@
         <div class="registration">
 <H1>Register your account!</H1>
             <form name="register" style="align-items: center;" method="POST">
-            Password: <br> <input type="password" class="input-box" name="password" placeholder="Enter your password"><br>
-            E-mail:<br>  <input type="text" class="input-box" name="mail" placeholder="Enter your e-mail address"><br><br>
+            E-mail:<br>  <input type="text" class="input-box" name="email" placeholder="Enter your e-mail address"><br>
+            Password: <br> <input type="password" class="input-box" name="password" placeholder="Enter your password"><br><br>
+            
             <button type="submit" name="reg-btn" class="reg-btn">Register</button>
             </div>
     </div>

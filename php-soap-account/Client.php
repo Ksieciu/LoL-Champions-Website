@@ -3,8 +3,8 @@
 class Client{
 
     public function __construct(){
-        $params = array('location' => 'http://localhost/lol-heroes/lol-champions-website/php-soap-account/server.php',
-            'uri' => 'urn://localhost/lol-heroes/lol-champions-website/php-soap-account/server.php',
+        $params = array('location' => 'http://localhost/lol-heroes/lol-champions-website/php-soap-account/Server.php',
+            'uri' => 'urn://localhost/lol-heroes/lol-champions-website/php-soap-account/Server.php',
             'trace' => 1);
 
         $this->instance = new SoapClient(Null, $params);

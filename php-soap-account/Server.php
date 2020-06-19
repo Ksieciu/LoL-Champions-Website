@@ -43,7 +43,8 @@ class Server{
         // check if there is already account with given email
         // if not, then create account
         if($query->rowCount() > 0){
-            throw new SOAPFault(401, 'Account with that email already exists!');
+            echo "Failed to create an account!";
+            return false;
         } else {
             $query = $this->conn->prepare('INSERT INTO ' . 'users' . '
                 SET
@@ -96,7 +97,7 @@ class Server{
 }
 
 
-$options = array('uri' => 'localhost/Lol-Heroes/LoL-Champions-Website/php-monsters-soap/Server.php');
+$options = array('uri' => 'localhost/Lol-Heroes/LoL-Champions-Website/php-soap-account/Server.php');
 $server = new SoapServer(Null, $options);
 $server->setClass('Server');
 $server->handle();
