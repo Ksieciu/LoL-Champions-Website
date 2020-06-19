@@ -5,7 +5,7 @@
     header('Content-Type: application/json');
 
     include_once '../../config/Database.php';
-    include_once '../../models/Champion.php';
+    include_once '../../models/Monster.php';
 
 
     // Instantiate DB and connect
