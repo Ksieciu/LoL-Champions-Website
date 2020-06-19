@@ -13,7 +13,7 @@
     $db = $database->connect();
 
     // Create champion object
-    $monsters = new Monsters($db);
+    $monsters = new Monster($db);
 
     $results = $monsters->show_all_monsters();
     $row_count = $results->rowCount();
@@ -51,7 +51,7 @@
         echo json_encode( $monsters_arr);
     
     } else {
-        echo json_encode(array('message' => 'No champions in database'));
+        echo json_encode(array('message' => 'No monsters in database'));
     }
 
 

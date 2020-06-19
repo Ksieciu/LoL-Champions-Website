@@ -36,13 +36,13 @@
     $monster->gold = $data->gold;
     $monster->exp = $data->exp;
     $monster->spawnTime = $data->spawnTime;
-    $monster->respownTime = $data->respawnTime;
+    $monster->respawnTime = $data->respawnTime;
     
 
 
 
     
-    if($champion->create_monster()){
+    if($monster->create_monster()){
         echo json_encode(
             array('message' =>  'Created new monster!')
         );
