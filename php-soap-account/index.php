@@ -84,9 +84,12 @@
 
         <div class="add-box">
             <h2 id="add_new"> Add new champion</h2><form name="add_new" style="align-items: center;">
+            Champions ID:<br> <input type="number" class="input-box" name="ch_id" placeholder="Enter your champions id"><br> 
             Champions name:<br> <input type="text" class="input-box" name="ch_name" placeholder="Enter your champions name"><br> 
             Champions title: <br> <input type="text" class="input-box" name="ch_title" placeholder="Enter your champions title"><br>
             Champions description:<br>  <input type="text" class="input-box" name="ch_desc" placeholder="Enter your champions description"><br>
+            Champions icon URL:<br>  <input type="text" class="input-box" name="ch_icon" placeholder="Past yours icon url"><br>
+
         </div>
             <button type="submit" name="add_champ" id="add_champ">Add</button></form>
         

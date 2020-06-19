@@ -31,7 +31,7 @@
     <li ><a href="./index.php#chemp_find">Find your champion</a></li>
     <li><a href="./index.php#add_new">Add new champion</a></li>
     <li><a href="./index.php#show_all">Show all Champions</a></li>
-    <li><a href="./index.php#show_all_monsters">Show all Monsters</a></li>
+    <li><a href="./index.php#monster_button">Show all Monsters</a></li>
     
 
     <li class="left-elem"></li>

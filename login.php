@@ -41,8 +41,6 @@ if($_POST && isset($_POST) && !empty($_POST)){
             $_SESSION["loggedin"] = true;
             $_SESSION["email"] = $login_status_arr->email;
             $_SESSION["id"] = $login_status_arr->id;
-            echo '<script>document.getElementById("logout").style.display = "auto";; </script>';
-            echo '<script>document.getElementById("fav").style.display = "auto";; </script>';
             header("location: index.php");
         }
     }
@@ -72,7 +70,7 @@ if($_POST && isset($_POST) && !empty($_POST)){
     <li ><a href="./index.php#chemp_find">Find your champion</a></li>
     <li><a href="./index.php#add_new">Add new champion</a></li>
     <li><a href="./index.php#show_all">Show all Champions</a></li>
-    <li><a href="./index.php#show_all_monsters">Show all Monsters</a></li>
+    <li><a href="./index.php#monster_button">Show all Monsters</a></li>
     
 
     <li class="left-elem"></li>
@@ -88,13 +86,13 @@ if($_POST && isset($_POST) && !empty($_POST)){
             <path d="M7 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
             <path fill-rule="evenodd" d="M1 15.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z"/></a>
           </svg></li>
-
-          <li title="Log out"><a href="javascript:loger()" id="logout">
-            <svg class="bi bi-box-arrow-in-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M8.146 11.354a.5.5 0 0 1 0-.708L10.793 8 8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0z"/>
-                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 1 8z"/>
-                <path fill-rule="evenodd" d="M13.5 14.5A1.5 1.5 0 0 0 15 13V3a1.5 1.5 0 0 0-1.5-1.5h-8A1.5 1.5 0 0 0 4 3v1.5a.5.5 0 0 0 1 0V3a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5h-8A.5.5 0 0 1 5 13v-1.5a.5.5 0 0 0-1 0V13a1.5 1.5 0 0 0 1.5 1.5h8z"/>
-            </a>    </svg></li>
+            
+         <li title="Log out"><a href="" id="logout">
+              <svg class="bi bi-box-arrow-in-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M8.146 11.354a.5.5 0 0 1 0-.708L10.793 8 8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0z"/>
+                  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 1 8z"/>
+                  <path fill-rule="evenodd" d="M13.5 14.5A1.5 1.5 0 0 0 15 13V3a1.5 1.5 0 0 0-1.5-1.5h-8A1.5 1.5 0 0 0 4 3v1.5a.5.5 0 0 0 1 0V3a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5h-8A.5.5 0 0 1 5 13v-1.5a.5.5 0 0 0-1 0V13a1.5 1.5 0 0 0 1.5 1.5h8z"/>
+              </a>    </svg></li>
 
 
         <li title="My favourites" class="hidden" id="fav"><a href="#your_list">
