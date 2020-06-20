@@ -596,3 +596,34 @@ position: relative;
             box-sizing: border-box;
             outline: yellowgreen;
          }
+
+
+
+
+    .buff-list {
+        color: rebeccapurple;
+        padding-top: 2em;
+        grid-row: 1 / 4;
+        display: grid;
+        grid: auto / repeat(4, 1fr);
+        grid-gap: 10px 10px;
+        padding-bottom: 2em;
+        align-content: center;
+        justify-content: center;
+    
+        ;
+
+    }
+
+
+    .buff{
+        justify-self: center;
+        align-self: center;
+        text-align: center;
+        border: 1px rebeccapurple solid;
+        border-style: dashed; 
+        place-items: center;
+        font-size: 0.6em;
+
+
+    }

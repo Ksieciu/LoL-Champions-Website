@@ -54,7 +54,7 @@ class MonsterManager{
 
         // print data for debuggin purpose
         // print_r($champion_data[0]->icon);
-        echo '<div class="buffs-list">';
+        echo '<div class="buff-list">';
 
         // while for creating rows
         while($cond){
@@ -67,7 +67,7 @@ class MonsterManager{
                     break;
                 }
                 // making divs for columns, printing champions icons
-                echo '<div class="buffs">';
+                echo '<div class="buff">';
                 echo '<img src="' . $buffs_data[$counter]->icon . '" style="padding:0.5em 0.5em 0.5em 0.5em"> <br>';
                 echo  $buffs_data[$counter]->name;
                 echo '<form style="display:auto" method="post" action="./details.php?name=' . $buffs_data[$counter]->name . '"><button type="submit" class="more-btn">More</button></form>';
