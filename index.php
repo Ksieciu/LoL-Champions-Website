@@ -8,10 +8,10 @@
     $data = new DataManager('http://localhost/Lol-Heroes/LoL-Champions-Website/php-champions-rest-api/api/champion/');
     $monster_data = new MonsterManager('http://localhost/Lol-Heroes/LoL-Champions-Website/php-champions-rest-api/api/champion/');
 
-   session_start();
-   if(!$_SESSION['loggedin']){
-       $_SESSION['loggedin'] = false;
-   }
+//    session_start();
+//    if(!$_SESSION['loggedin']){
+//        $_SESSION['loggedin'] = false;
+//    }
 
    if(isset($_POST['sbutton'])){
         $header_url = 'location: ' . 'details.php?name=' . $_POST['ch_search'];
@@ -67,36 +67,22 @@
 
     
     <div class="module-wrapper-pure">
-
-        
             <h2 id="show_all"> List of all Champions</h2>
            <!---       <button type="submit" name="show_button" id="show_button" method="POST">SHOW ALL</button> -->  
       
-            <?php  
-             
+            <?php         
             $data->show_champs_icons('show_all_champions.php'); ?>
-
-        
     </div>
 </div>
     <div class="module-wrapper-monster">
-
-    
            List of all Neutral Monsters<br>
-       <!---         <button type="submit" name="monster_button" id="monster_button">SHOW ALL</button> -->  
-            
              <?php $monster_data->show_monsters_icons('show_all_monsters.php'); ?>
-
-        
-
     </div>
 
     <div class="module-wrapper-buff">
 
     
 List of Buffs <br>
-  <!--- -->  
-
  <?php $monster_data->show_buffs_icons('show_all_buffs.php'); ?>
 
 
