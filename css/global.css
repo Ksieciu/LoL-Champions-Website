@@ -486,19 +486,15 @@ position: relative;
         justify-content: center;
         border: orange;
         font-size: 19.2px;
-        transition: background-color 2s;
+        
         cursor: pointer;
         transition: background-color 2s;
         
        
      }
     
-        
-.d-fav-btn:hover {
-        background-color: white;
-        color: orange; 
-        cursor: pointer;
-             }
+    
+ 
 .more-btn{
         background-color:green;
         color: white;

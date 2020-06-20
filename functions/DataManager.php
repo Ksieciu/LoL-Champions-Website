@@ -69,7 +69,7 @@ class DataManager{
                 echo ucfirst($key) .':<br>' . ' <input class="input-box-details" name="' . $key . '" value="' . $value . '"></input><br><br>';
             }
         }
-        echo '<br><button type="submit" class="delete-btn" value="Update champion" name="update">Update champion</button>';
+        echo '<br><button type="submit" class="update-btn" value="Update champion" name="update">Update champion</button>';
         echo '</form><br>';
         echo '<div class="details">';
         echo '<form method="POST"><button type="submit" class="delete-btn" name="delete" value="Delete champion"> Delete champion</button></form>';
