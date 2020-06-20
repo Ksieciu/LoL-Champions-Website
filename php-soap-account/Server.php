@@ -74,7 +74,7 @@ class Server{
         $row = $query->fetch(PDO::FETCH_ASSOC);
         $result = new stdClass();
 
-        if($row['email'] == $header_params->email){
+        if($row['email'] = $header_params->email){
             if($row['password'] !== $header_params->password){
                 $result->msg = "Wrong password!";
                 $result->success = false;
