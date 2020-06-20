@@ -55,12 +55,15 @@ class DataManager{
         $json_data = file_get_contents($url);
         $data= json_decode($json_data);
         $id = 0;
+        if (!$data){
+            echo "There is no such object in database!<br>";
+            return false;
+        }
         
         foreach ($data as $key => $value) {
             if($key == 'id') { 
                 $id = $value;
-
-                echo  ucfirst($key) . ': <input class="' . $key . '" name="' . $key . '" value="' . $value . '"></input><br>';
+                echo ucfirst($key) . ': <input class="' . $key . '" name="' . $key . '" value="' . $value . '"></input><br>';
             }
             elseif($key == 'icon'){
                 echo '<img src="' . $value . '" style="padding:0.3em 0.3em 0.3em 0.3em"> <br>';
@@ -69,6 +72,10 @@ class DataManager{
                 echo ucfirst($key) . ': <input class="' . $key . '" name="' . $key . '" value="' . $value . '"></input><br>';
             }
         }
+        echo '<br><button type="submit" class="delete-btn" value="Update champion" name="update">Update champion</button>';
+        echo '</form><br>';
+        echo '<div class="details">';
+        echo '<form method="POST"><button type="submit" class="delete-btn" name="delete" value="Delete champion"> Delete champion</button></form>';
         return $id;
     }
 
