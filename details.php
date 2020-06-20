@@ -63,7 +63,7 @@
             <path fill-rule="evenodd" d="M1 15.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z"/></a>
           </svg></li>
 
-          <li title="Log out" class="hidden"><a href="#logout"><a href="#log_out">
+          <li title="Log out" ><a href="./logout.php"><a href="#log_out">
             <svg class="bi bi-box-arrow-in-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M8.146 11.354a.5.5 0 0 1 0-.708L10.793 8 8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0z"/>
                 <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 1 8z"/>
@@ -71,10 +71,6 @@
             </a>    </svg></li>
 
 
-        <li title="My favourites" class="hidden"><a href="#your_list"><a href="#fav">
-        <svg class="bi bi-heart" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/></a>
-          </svg></li>
 
     <li title="Go UP to the home page"><a href="./index.php#header">
         <svg class="bi bi-house" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -92,14 +88,11 @@
         $api_url = '/show_champion.php?name=' . $_GET['name'];
         $_SESSION['obj_id'] = $data->show_all_info($api_url); 
         
-    ?><br>
-    <button type="submit" class="delete-btn" value="Update champion" name="update">Update champion</button>
-    </form><br>
-        <div class="details">
+    ?><br><div class="details">
+    <button type="submit" class="update-btn" value="Update champion" name="update">Update champion</button>
+    </form><br><br>
+        
             <form method="POST"><button type="submit" class="delete-btn" name="delete" value="Delete champion"> Delete champion</button></form>
-            <!-- <button type="submit" class="d-fav-btn" method="Post" ><svg class="bi bi-heart" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M8 2.748l-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/></a>
-          </svg></button> -->
             </div>
     </div>
 </div>
