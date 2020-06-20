@@ -3,7 +3,6 @@
     include 'functions/MonsterManager.php';
     include 'layouts/Navigation.php';
     include 'layouts/Footer.php';
-    include 'layouts/Head.php';
    
     $data = new DataManager('http://localhost/Lol-Heroes/LoL-Champions-Website/php-champions-rest-api/api/champion/');
     $monster_data = new MonsterManager('http://localhost/Lol-Heroes/LoL-Champions-Website/php-champions-rest-api/api/champion/');
@@ -23,7 +22,14 @@
 <!DOCTYPE html>
 <html lang="pl">
 
-<?php head(); ?>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League of Legends - Champions</title>
+    <!--- global css with basic styling and favicon -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400&display=swap" rel="stylesheet">
+</head>
 
 <body>
     <div class="header" id="header">
@@ -74,12 +80,14 @@
             $data->show_champs_icons('show_all_champions.php'); ?>
     </div>
 </div>
-    <div class="module-wrapper-monster">
+    <div class="module-wrapper-monster" id="monstaa">
+
+    
            List of all Neutral Monsters<br>
              <?php $monster_data->show_monsters_icons('show_all_monsters.php'); ?>
     </div>
 
-    <div class="module-wrapper-buff">
+    <div class="module-wrapper-buff" id="buff">
 
     
 List of Buffs <br>
