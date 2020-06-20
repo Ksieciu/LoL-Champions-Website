@@ -132,4 +132,63 @@ class Monster{
             return false;
         } 
     }
+
+    public function update_monster(){
+        $query = $this->conn->prepare('UPDATE ' . $this->monster_table . '
+            SET
+                id = :id,
+                name = :name,
+                icon = :icon,
+                description = :description,
+                gold = :gold,
+                exp = :exp,
+                spawntime = :spawntime,
+                respawntime = :respawntime,
+                hp = :hp,
+                armor = :armor,
+                spellblock = :spellblock,
+                attackdamage = :attackdamage,
+                attackspeedoffset = :attackspeedoffset,
+                movespeed = :movespeed
+            WHERE
+                id = :id');
+
+
+        // binding parameters
+        $query->bindParam(':id', $this->id);
+        $query->bindParam(':name', $this->name);
+        $query->bindParam(':icon', $this->icon);
+        $query->bindParam(':description', $this->description);
+        $query->bindParam(':gold', $this->gold);
+        $query->bindParam(':exp', $this->exp);
+        $query->bindParam(':spawntime', $this->spawnTime);
+        $query->bindParam(':respawntime', $this->respawnTime);
+        $query->bindParam(':hp', $this->stats['hp']);
+        $query->bindParam(':movespeed', $this->stats['movespeed']);
+        $query->bindParam(':armor', $this->stats['armor']);
+        $query->bindParam(':spellblock', $this->stats['spellblock']);
+        $query->bindParam(':attackdamage', $this->stats['attackdamage']);
+        $query->bindParam(':attackspeedoffset', $this->stats['attackspeedoffset']);
+
+        if($query->execute()){
+            return true;
+        } else {  
+            print_r($query->errorInfo());
+            return false;
+        } 
+    }
+
+    public function delete_monster(){
+        $query = $this->conn->prepare('DELETE FROM ' . $this->monster_table . ' WHERE id = :id');
+        $query->bindParam(':id', $this->id);
+
+
+        if($query->execute()){
+            return true;
+        } else {  
+            print_r($query->errorInfo());
+            printf('Failed to delete monster');
+            return false;
+        } 
+    }
 }

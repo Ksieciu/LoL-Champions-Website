@@ -7,22 +7,30 @@
 
     $data = new DataManager('http://localhost/Lol-Heroes/LoL-Champions-Website/php-champions-rest-api/api/champion/');
     session_start();
-
+    
+    
     if(isset($_POST["delete"])){
-        $api_url = '/delete_champion.php';
-        $data->delete_object($api_url, $_SESSION['obj_id']);
+        if($_SESSION['check'] == 1){
+            $api_url = '/delete_champion.php';
+            $data->delete_object($api_url, $_SESSION['obj_id']);
+        } elseif ($_SESSION['check'] == 2){
+            $api_url = '/delete_monster.php';
+            $data->delete_object($api_url, $_SESSION['obj_id']);
+        }
+        
         
         header("location: index.php");
         exit;
     }
 
     if(isset($_POST["update"])){
-
-        $api_url = '/update_champion.php';
-        $data->update_object($api_url, $_POST);
-
-        foreach ($_POST as $key => $value) {
-            echo $key . ': ' . $value;
+        echo $_SESSION['check'];
+        if($_SESSION['check'] == 1){
+            $api_url = '/update_champion.php';
+            $data->update_object($api_url, $_POST);
+        } elseif ($_SESSION['check'] == 2){
+            $api_url = '/update_monster.php';
+            $data->update_object($api_url, $_POST);
         }
         // header("location: index.php");
         // exit;
@@ -46,9 +54,11 @@
             <?php 
                 $api_url = '/show_champion.php?name=' . $_GET['name'];
                 $_SESSION['obj_id'] = $data->show_all_info($api_url); 
+                $_SESSION['check'] = 1;
                 if($_SESSION['obj_id'] == false){
                     $api_url = '/show_monster.php?name=' . $_GET['name'];
                     $_SESSION['obj_id'] = $data->show_all_info($api_url); 
+                    $_SESSION['check'] = 2;
                     if($_SESSION['obj_id'] == false){
                         echo "<br>There is no such object in database!<br>";
                     }
