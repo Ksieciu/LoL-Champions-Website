@@ -97,7 +97,7 @@
 List of Buffs <br>
   <!--- -->  
 
- <?php $monster_data->show_monsters_icons('show_all_monsters.php'); ?>
+ <?php $monster_data->show_buffs_icons('show_all_buffs.php'); ?>
 
 
 

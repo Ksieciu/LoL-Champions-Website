@@ -16,6 +16,9 @@
         } elseif ($_SESSION['check'] == 2){
             $api_url = '/delete_monster.php';
             $data->delete_object($api_url, $_SESSION['obj_id']);
+        } elseif ($_SESSION['check'] == 3){
+            $api_url = '/delete_buff.php';
+            $data->delete_object($api_url, $_SESSION['obj_id']);
         }
         
         
@@ -31,6 +34,9 @@
         } elseif ($_SESSION['check'] == 2){
             $api_url = '/update_monster.php';
             $data->update_object($api_url, $_POST);
+        } elseif ($_SESSION['check'] == 3){
+            $api_url = '/update_buff.php';
+            $data->delete_object($api_url, $_SESSION['obj_id']);
         }
         // header("location: index.php");
         // exit;
@@ -60,7 +66,12 @@
                     $_SESSION['obj_id'] = $data->show_all_info($api_url); 
                     $_SESSION['check'] = 2;
                     if($_SESSION['obj_id'] == false){
-                        echo "<br>There is no such object in database!<br>";
+                        $api_url = '/show_buff.php?name=' . $_GET['name'];
+                        $_SESSION['obj_id'] = $data->show_all_info($api_url); 
+                        $_SESSION['check'] = 3;
+                        if($_SESSION['obj_id'] == false){
+                            echo "<br>There is no such object in database!<br>";
+                        }
                     }
                 }
                     
