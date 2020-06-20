@@ -428,8 +428,8 @@ position: relative;
         padding-top: 10em;
         padding-bottom: 3em;
         white-space: normal;
-         overflow: hidden;
-        position: relative;
+        overflow: hidden;
+        
      }
     
      .details-box {
@@ -493,57 +493,34 @@ position: relative;
        
      }
     
-    .fav-btn:hover {
+        
+.d-fav-btn:hover {
         background-color: white;
         color: orange; 
         cursor: pointer;
-         }
-
-         .d-fav-btn{
-            background-color:orange;
-            color: white;
-            border-radius: 8px;
-            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
-            padding: 0.25em 0.75em;
-            min-width: 10ch;
-            min-height: 44px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border: orange;
-            margin-bottom: 1em;
-           
-            
-           
-         }
-        
-        .d-fav-btn:hover {
-            background-color: white;
-            color: orange; 
-            cursor: pointer;
              }
-    .more-btn{
-            background-color:green;
-            color: white;
-            border-radius: 8px;
-            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
-            padding: 0.25em 0.75em;
-            min-width: 10ch;
-            min-height: 44px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border: green;
-            margin-bottom: 1em;
-            float: center;
-            transition: background-color 2s;
+.more-btn{
+        background-color:green;
+        color: white;
+        border-radius: 8px;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+        padding: 0.25em 0.75em;
+        min-width: 10ch;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: green;
+        margin-bottom: 1em;
+        float: center;
+        transition: background-color 2s;
 
          }
         
     .more-btn:hover {
-            background-color: white;
-            color: green; 
-            cursor: pointer;
+        background-color: white;
+        color: green; 
+        cursor: pointer;
              }
 
 /*monster section*/
