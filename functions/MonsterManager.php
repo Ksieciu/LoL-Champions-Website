@@ -37,7 +37,7 @@ class MonsterManager{
                 echo '<div class="monster">';
                 echo '<img src="' . $monster_data[$counter]->icon . '" style="padding:0.5em 0.5em 0.5em 0.5em"> <br>';
                 echo  $monster_data[$counter]->name;
-                echo '<form style="display:auto" method="get" action="./details.php"><button type="submit" class="more-btn">More</button></form>';
+                echo '<form style="display:auto" method="post" action="./details.php?name=' . $monster_data[$counter]->name . '"><button type="submit" class="more-btn">More</button></form>';
                 echo '</div>';
                 $counter++;
             }

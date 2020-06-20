@@ -39,7 +39,7 @@
                 'gold' => $gold,
                 'exp' => $exp,
                 'spawnTime' => $spawntime,
-                'respownTime' => $respawntime,
+                'respawnTime' => $respawntime,
             );
             array_push($monsters_arr, $monsters_info);
         }

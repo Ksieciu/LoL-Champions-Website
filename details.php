@@ -81,6 +81,15 @@
             <?php 
                 $api_url = '/show_champion.php?name=' . $_GET['name'];
                 $_SESSION['obj_id'] = $data->show_all_info($api_url); 
+                if($_SESSION['obj_id'] == false){
+                    $api_url = '/show_monster.php?name=' . $_GET['name'];
+                    $_SESSION['obj_id'] = $data->show_all_info($api_url); 
+                    if($_SESSION['obj_id'] == false){
+                        echo "<br>There is no such object in database!<br>";
+                    }
+                }
+                    
+                
                 
             ?><br>
             

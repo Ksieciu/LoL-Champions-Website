@@ -20,20 +20,12 @@ class Server{
             $dsn = 'mysql:host=' . $this->db_host . ';dbname=' . $this->db_name . ";charset=utf8";
             $conn = new PDO($dsn, $this->db_user, $this->db_pass);
             $this->conn = $conn; 
-            // $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         } catch(PDOException $e) {
             echo $e->getMessage();
         }
         return $this->conn;
     }
-
-    // public static function authenticate($header_params){
-    //     if($header_params->username == 'name' && $header_params->password == 'password') {
-    //         return true;
-    //     }
-    //     else throw new SOAPFault('Wrong username or password!', 401);
-    // }
 
     public function register($header_params){
         $query = $this->conn->prepare('SELECT id FROM users WHERE email = :email');

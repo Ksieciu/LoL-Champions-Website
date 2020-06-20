@@ -38,7 +38,7 @@ class DataManager{
                 echo '<img src="' . $champion_data[$counter]->icon . '" style="padding:0.3em 0.3em 0.3em 0.3em"> <br>';
                 echo  $champion_data[$counter]->name  . '<br>';
                 echo  $champion_data[$counter]->title ;
-               echo '<form style="display:auto" method="post" action="./details.php?name=' . $champion_data[$counter]->name . '"><button type="submit" class="more-btn">More</button></form>';
+                echo '<form style="display:auto" method="post" action="./details.php?name=' . $champion_data[$counter]->name . '"><button type="submit" class="more-btn">More</button></form>';
                 echo '</div>';
                 $counter++;
             }
@@ -52,7 +52,6 @@ class DataManager{
         $data= json_decode($json_data);
         $id = 0;
         if (!$data){
-            echo "There is no such object in database!<br>";
             return false;
         }
         
@@ -69,10 +68,10 @@ class DataManager{
                 echo ucfirst($key) .':<br>' . ' <input class="input-box-details" name="' . $key . '" value="' . $value . '"></input><br><br>';
             }
         }
-        echo '<br><button type="submit" class="update-btn" value="Update champion" name="update">Update champion</button>';
+        echo '<br><button type="submit" class="update-btn" value="Update champion" name="update">Update object</button>';
         echo '</form><br>';
         echo '<div class="details">';
-        echo '<form method="POST"><button type="submit" class="delete-btn" name="delete" value="Delete champion"> Delete champion</button></form>';
+        echo '<form method="POST"><button type="submit" class="delete-btn" name="delete" value="Delete champion"> Delete object</button></form>';
         return $id;
     }
 

@@ -55,7 +55,7 @@ class Monster{
                 m.gold,
                 m.exp,
                 m.spawntime,
-                m.resprawntime
+                m.respawntime
             FROM
                 ' . $this->monster_table . ' m 
             WHERE
@@ -70,13 +70,12 @@ class Monster{
         // Set properties
         $this->id = $row['id'];
         $this->name = $row['name'];
-        $this->title = $row['title'];
         $this->icon = $row['icon'];
         $this->description = $row['description'];
-        $this->$gold = $row['gold'];;
-        $this->$exp = $row['exp'];;
-        $this->$spawnTime = $row['spawntime'];;
-        $this->$respawnTime = $row['respawntime'];;
+        $this->gold = $row['gold'];;
+        $this->exp = $row['exp'];
+        $this->spawnTime = $row['spawntime'];
+        $this->respawnTime = $row['respawntime'];
         $this->stats['hp'] = $row['hp'];
         $this->stats['armor'] = $row['armor'];
         $this->stats['spellblock'] = $row['spellblock'];
