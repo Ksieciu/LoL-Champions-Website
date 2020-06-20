@@ -60,13 +60,13 @@ class DataManager{
             if($key == 'id') { 
                 $id = $value;
                 
-                echo  ucfirst($key) . '<br>' .': <input class="input-box-details"  name="' . $key . '" value="' . $value . '"></input><br>';
+                echo  ucfirst($key) . ':<br>' .' <input class="input-box-details"  name="' . $key . '" value="' . $value . '"></input><br><br>';
             }
             elseif($key == 'icon'){
                 echo '<img class="details-image" src="' . $value . '" style="padding:0.3em 0.3em 0.3em 0.3em"> <br>';
-                echo ucfirst($key) .'<br>' .': <input class="input-box-details" name="' . $key . '" value="' . $value . '"></input><br>';
+                echo ucfirst($key) .':<br>' .' <input class="input-box-details" name="' . $key . '" value="' . $value . '"></input><br><br>';
             } else {
-                echo ucfirst($key) .'<br>' . ': <input class="input-box-details" name="' . $key . '" value="' . $value . '"></input><br>';
+                echo ucfirst($key) .':<br>' . ' <input class="input-box-details" name="' . $key . '" value="' . $value . '"></input><br><br>';
             }
         }
         echo '<br><button type="submit" class="delete-btn" value="Update champion" name="update">Update champion</button>';
