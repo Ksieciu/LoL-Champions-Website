@@ -78,13 +78,13 @@ class Server{
             if($row['password'] !== $header_params->password){
                 $result->msg = "Wrong password!";
                 $result->success = false;
-                $result->email = $row['email'];
+                // $result->email = $row['email'];
                 return $result;
             } else {
                 $result->msg = "You have succesfully logged in!";
                 $result->success = true;
                 $result->email = $row['email'];
-                $result->email = $row['id'];
+                $result->id = $row['id'];
                 return $result;
             }
         } else {
