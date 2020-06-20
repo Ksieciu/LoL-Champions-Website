@@ -41,7 +41,7 @@ if($_POST && isset($_POST) && !empty($_POST)){
             $_SESSION["loggedin"] = true;
             $_SESSION["email"] = $login_status_arr->email;
             $_SESSION["id"] = $login_status_arr->id;
-            // header("location: index.php");
+            header("location: index.php");
         }
     }
 };
